@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav>
+    <div class="container">
+      <h1 class="logo">Jumana Portfolio</h1>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="contact.html">Contact Me</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="projects">
+    <div class="container">
+      <h1>My Projects</h1>
+      <div class="categories">
+        <button class="category-btn active" data-category="all">All</button>
+        <button class="category-btn" data-category="ai">AI Projects</button>
+        <button class="category-btn" data-category="web">Web Development</button>
+        <button class="category-btn" data-category="qa">QA Projects</button>
+      </div>
+
+      <div class="projects-container">
+        <!-- AI Projects -->
+        <div class="project" data-category="ai">
+          <h3>AI Model Optimization</h3>
+          <p>Designed and trained machine learning models to improve prediction accuracy by 15%.</p>
+          <a href="https://github.com/example-ai-project" target="_blank" class="project-link">View Project</a>
+        </div>
+        <div class="project" data-category="ai">
+          <h3>ResNet Implementation</h3>
+          <p>Built a simplified ResNet-18 architecture to classify images using PyTorch.</p>
+          <a href="https://github.com/example-resnet-project" target="_blank" class="project-link">View Project</a>
+        </div>
+
+        <!-- Web Development Projects -->
+        <div class="project" data-category="web">
+          <h3>Personal Portfolio</h3>
+          <p>Designed and developed a responsive portfolio website using HTML, CSS, and JavaScript.</p>
+          <a href="https://github.com/example-portfolio" target="_blank" class="project-link">View Project</a>
+        </div>
+        <div class="project" data-category="web">
+          <h3>E-commerce Website</h3>
+          <p>Created a dynamic e-commerce website with user authentication and cart functionality.</p>
+          <a href="https://github.com/example-ecommerce" target="_blank" class="project-link">View Project</a>
+        </div>
+
+        <!-- QA Projects -->
+        <div class="project" data-category="qa">
+          <h3>Manual Testing Project</h3>
+          <p>Planned and executed test cases to ensure the quality of deliverables.</p>
+          <a href="https://github.com/example-manual-testing" target="_blank" class="project-link">View Project</a>
+        </div>
+        <div class="project" data-category="qa">
+          <h3>Automation Testing Project</h3>
+          <p>Developed automated test scripts using Selenium WebDriver and MSTest.</p>
+          <a href="https://github.com/example-automation-testing" target="_blank" class="project-link">View Project</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
