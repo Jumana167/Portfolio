@@ -1,13 +1,3 @@
-// Highlight the active link in the navigation bar
-const navLinks = document.querySelectorAll('.nav-links a');
-const currentPage = window.location.pathname.split('/').pop();
-
-navLinks.forEach(link => {
-  if (link.getAttribute('href') === currentPage) {
-    link.classList.add('active');
-  }
-});
-
 // Filter projects by category on the Projects page
 const categoryButtons = document.querySelectorAll('.category-btn');
 const projects = document.querySelectorAll('.project');
@@ -34,20 +24,34 @@ if (categoryButtons.length > 0 && projects.length > 0) {
   });
 }
 
-// Smooth scroll for internal links (optional for better UX)
-const smoothScrollLinks = document.querySelectorAll('a[href^="#"]');
+// Scroll animations for projects
+const projectsForAnimation = document.querySelectorAll('.project');
+const observer = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  },
+  { threshold: 0.1 }
+);
 
-smoothScrollLinks.forEach(link => {
-  link.addEventListener('click', event => {
-    event.preventDefault();
-    const targetId = link.getAttribute('href').substring(1);
-    const targetElement = document.getElementById(targetId);
+projectsForAnimation.forEach(project => {
+  observer.observe(project);
+});
 
+// Smooth scrolling for navigation links
+const navLinks = document.querySelectorAll('.nav-links a');
+navLinks.forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    const targetId = link.getAttribute('href').replace('.html', '');
+    const targetElement = document.querySelector(`#${targetId}`);
     if (targetElement) {
-      window.scrollTo({
-        top: targetElement.offsetTop,
-        behavior: 'smooth'
-      });
+      targetElement.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      window.location.href = link.getAttribute('href');
     }
   });
 });
