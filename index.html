@@ -5,6 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      opacity: 0;
+      animation: fadeInPage 1s forwards;
+    }
+    @keyframes fadeInPage {
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
 </head>
 <body>
   <nav>
@@ -21,10 +32,10 @@
 
   <header class="home">
     <div class="container">
-      <h2>Welcome to My Portfolio</h2>
-      <h1>Jumana Hussien</h1>
+      <h2>Welcome to <span class="highlight">My Portfolio</span></h2>
+      <h1 class="animated-text">Jumana Hussien</h1>
       <p>
-        I am a motivated Computer Information Systems (CIS) student passionate about software development, QA testing, and artificial intelligence. Explore my projects and get in touch to collaborate.
+        I am a passionate developer creating impactful digital experiences. Explore my work and connect with me!
       </p>
       <a href="projects.html" class="btn">View Projects</a>
     </div>
