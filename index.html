@@ -3,41 +3,50 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Jumana Portfolio</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- GSAP for Animations -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
-<body>
-  <nav>
-    <div class="container">
-      <h1 class="logo">Jumana Portfolio</h1>
-      <ul class="nav-links">
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="about.html">About Me</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="contact.html">Contact Me</a></li>
+<body class="bg-gradient-to-r from-gray-900 to-gray-800 text-white font-poppins">
+
+  <!-- Navigation Bar -->
+  <nav class="bg-gray-900 bg-opacity-90 fixed w-full z-50 shadow-lg">
+    <div class="container mx-auto flex justify-between items-center py-4 px-6">
+      <h1 class="text-2xl font-bold text-teal-400">Jumana Portfolio</h1>
+      <ul class="flex space-x-6">
+        <li><a href="index.html" class="text-white hover:text-teal-400">Home</a></li>
+        <li><a href="about.html" class="text-white hover:text-teal-400">About Me</a></li>
+        <li><a href="projects.html" class="text-white hover:text-teal-400">Projects</a></li>
+        <li><a href="contact.html" class="text-white hover:text-teal-400">Contact Me</a></li>
       </ul>
     </div>
   </nav>
 
-  <header class="home">
-    <div class="container">
-      <div class="intro">
-        <div class="image-wrapper">
-          <img src="your-image.jpg" alt="Jumana Hussien">
-        </div>
-        <div class="text">
-          <h2>Welcome to <span class="highlight">My Portfolio</span></h2>
-          <h1 class="animated-text">Jumana Hussien</h1>
-          <p>
-            I am a passionate developer creating impactful digital experiences. Explore my projects, skills, and work to know more about me.
-          </p>
-          <div class="btn-group">
-            <a href="projects.html" class="btn">View Projects</a>
-            <a href="resume.pdf" class="btn">Download CV</a>
-          </div>
-        </div>
+  <!-- Hero Section -->
+  <header class="h-screen flex items-center justify-center bg-gradient-to-br from-teal-400 to-blue-600 relative">
+    <div class="text-center space-y-6">
+      <div class="relative mx-auto rounded-full overflow-hidden w-40 h-40 border-4 border-white shadow-lg">
+        <img src="your-image.jpg" alt="Jumana Hussien" class="w-full h-full object-cover">
+      </div>
+      <h2 class="text-4xl font-bold">Welcome to My Portfolio</h2>
+      <p class="text-lg text-gray-200">I am Jumana Hussien, a passionate developer creating impactful digital experiences.</p>
+      <div class="space-x-4">
+        <a href="projects.html" class="px-6 py-3 bg-teal-500 text-white font-bold rounded-lg shadow-lg hover:bg-teal-600 transition">View Projects</a>
+        <a href="resume.pdf" download class="px-6 py-3 bg-white text-teal-500 font-bold rounded-lg shadow-lg hover:bg-gray-200 transition">Download CV</a>
       </div>
     </div>
   </header>
+
+  <script>
+    // GSAP Animations
+    gsap.from("header h2", { duration: 1, y: -50, opacity: 0, ease: "power3.out" });
+    gsap.from("header p", { duration: 1, delay: 0.5, y: 50, opacity: 0, ease: "power3.out" });
+    gsap.from("header img", { duration: 1, delay: 0.3, scale: 0.8, opacity: 0, ease: "elastic.out(1, 0.75)" });
+    gsap.from("header a", { duration: 1, delay: 0.8, opacity: 0, scale: 0.9, stagger: 0.2 });
+  </script>
 </body>
 </html>
