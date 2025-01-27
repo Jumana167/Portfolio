@@ -8,9 +8,18 @@
 /* Body Styling */
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: #0a0a0a;
+  background: linear-gradient(135deg, #1a1a1a, #0d1117);
   color: white;
   line-height: 1.6;
+  opacity: 0;
+  animation: fadeInPage 1s forwards;
+}
+
+/* Fade-in animation */
+@keyframes fadeInPage {
+  to {
+    opacity: 1;
+  }
 }
 
 /* Navigation Bar */
@@ -50,8 +59,6 @@ nav {
   font-size: 1.5rem;
   font-weight: bold;
   color: #00d4ff;
-  display: inline-block;
-  margin-right: auto;
 }
 
 /* Header Styling for Home Page */
@@ -69,6 +76,7 @@ header.home h2 {
 header.home h1 {
   font-size: 3rem;
   margin-bottom: 20px;
+  animation: slideIn 1s ease-out;
 }
 
 header.home p {
@@ -83,25 +91,43 @@ header.home .btn {
   color: white;
   text-decoration: none;
   border-radius: 5px;
-  transition: background 0.3s;
+  transition: background 0.3s, transform 0.3s;
 }
 
 header.home .btn:hover {
   background: #009977;
+  transform: translateY(-5px);
 }
 
-/* About Me Styling */
+/* Keyframes */
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* About Section */
 .about {
   padding: 50px 0;
   text-align: center;
 }
 
-.about h1,
-.about h2 {
+.about h1 {
+  font-size: 2.5rem;
   color: #00d4ff;
-  margin-bottom: 20px;
 }
 
+.about p {
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+}
+
+/* Skills Section */
 .skills-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -123,6 +149,7 @@ header.home .btn:hover {
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
 
+/* Progress Bars */
 .progress {
   background: #333;
   border-radius: 5px;
@@ -141,29 +168,7 @@ header.home .btn:hover {
   font-size: 0.9rem;
 }
 
-.soft-skills {
-  margin-top: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
-}
-
-.soft-skills span {
-  background: #1a1a1a;
-  color: #00d4ff;
-  padding: 10px 15px;
-  border-radius: 5px;
-  font-size: 0.9rem;
-  transition: background 0.3s, transform 0.3s;
-}
-
-.soft-skills span:hover {
-  background: #00cc66;
-  transform: translateY(-5px);
-}
-
-/* Projects Page Styling */
+/* Projects Section */
 .projects {
   padding: 50px 0;
   text-align: center;
@@ -230,29 +235,7 @@ header.home .btn:hover {
   color: #00cc66;
 }
 
-/* Contact Me Styling */
-.contact {
-  padding: 50px 0;
-  text-align: center;
-}
-
-.contact h1 {
-  font-size: 2.5rem;
-  color: #00d4ff;
-  margin-bottom: 20px;
-}
-
-.contact p {
-  margin-bottom: 30px;
-  font-size: 1.2rem;
-}
-
-.contact-icons {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-}
-
+/* Contact Section */
 .contact-icons a {
   display: flex;
   flex-direction: column;
@@ -274,9 +257,4 @@ header.home .btn:hover {
 .contact-icons i {
   font-size: 2rem;
   margin-bottom: 10px;
-}
-
-.contact-icons span {
-  font-size: 1rem;
-  font-weight: bold;
 }
