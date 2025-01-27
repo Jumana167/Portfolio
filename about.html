@@ -4,45 +4,62 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Me</title>
-  <link rel="stylesheet" href="style.css">
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
-  <nav>
-    <div class="container">
-      <h1 class="logo">Jumana Portfolio</h1>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html" class="active">About Me</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="contact.html">Contact Me</a></li>
+<body class="bg-gray-900 text-white font-poppins">
+  <!-- Navigation Bar -->
+  <nav class="bg-gray-800 fixed w-full z-50 shadow-lg">
+    <div class="container mx-auto flex justify-between items-center py-4 px-6">
+      <h1 class="text-2xl font-bold text-teal-400">Jumana Portfolio</h1>
+      <ul class="flex space-x-6">
+        <li><a href="index.html" class="text-white hover:text-teal-400">Home</a></li>
+        <li><a href="about.html" class="text-teal-400 font-bold">About Me</a></li>
+        <li><a href="projects.html" class="text-white hover:text-teal-400">Projects</a></li>
+        <li><a href="contact.html" class="text-white hover:text-teal-400">Contact Me</a></li>
       </ul>
     </div>
   </nav>
 
-  <section class="about">
-    <div class="container">
-      <h1>About Me</h1>
-      <p>
-        Hello! I'm Jumana, a passionate individual with a love for creating meaningful and impactful digital experiences. I enjoy working on projects that bring ideas to life, combining creativity and technical skills to deliver solutions that make a difference.
-      </p>
-      <p>
-        With a strong interest in technology and problem-solving, I thrive on challenges that allow me to learn, grow, and innovate. Whether it's designing user-friendly applications, developing efficient systems, or exploring new technologies, I am always eager to take the next step in my journey.
-      </p>
+  <!-- About Section -->
+  <section class="pt-28 px-6">
+    <div class="container mx-auto">
+      <div class="flex flex-col md:flex-row items-center">
+        <!-- Image Section -->
+        <div class="w-full md:w-1/3 flex justify-center">
+          <div class="rounded-full overflow-hidden border-4 border-teal-400 shadow-lg w-48 h-48">
+            <img src="images/your-image.jpg" alt="Jumana Hussien" class="w-full h-full object-cover">
+          </div>
+        </div>
+        <!-- Text Section -->
+        <div class="mt-8 md:mt-0 md:ml-12 text-center md:text-left">
+          <h1 class="text-4xl font-bold text-teal-400">About Me</h1>
+          <p class="mt-4 text-lg text-gray-300">
+            Hello! I'm Jumana, a passionate individual with a love for creating meaningful and impactful digital experiences.
+          </p>
+          <p class="mt-4 text-lg text-gray-300">
+            With a strong interest in technology and problem-solving, I thrive on challenges that allow me to learn, grow, and innovate.
+          </p>
+        </div>
+      </div>
 
-      <div class="skills">
-        <h2>Skills</h2>
-        <div class="skills-container">
-          <div class="skill">
-            <h3>Programming & Development</h3>
-            <p>Experience with various programming languages and development frameworks.</p>
+      <!-- Skills Section -->
+      <div class="mt-16">
+        <h2 class="text-3xl font-bold text-teal-400 mb-6">Skills</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          <!-- Skill Card -->
+          <div class="bg-gray-800 p-6 rounded-lg shadow-lg transform hover:scale-105 transition">
+            <h3 class="text-xl font-bold text-teal-400">Programming & Development</h3>
+            <p class="text-gray-400 mt-2">Experience with various programming languages and frameworks.</p>
           </div>
-          <div class="skill">
-            <h3>Problem Solving</h3>
-            <p>Enjoy tackling complex problems with creative and efficient solutions.</p>
+          <div class="bg-gray-800 p-6 rounded-lg shadow-lg transform hover:scale-105 transition">
+            <h3 class="text-xl font-bold text-teal-400">Problem Solving</h3>
+            <p class="text-gray-400 mt-2">Enjoy tackling complex problems with creative and efficient solutions.</p>
           </div>
-          <div class="skill">
-            <h3>Teamwork & Collaboration</h3>
-            <p>Excel in working collaboratively to achieve common goals.</p>
+          <div class="bg-gray-800 p-6 rounded-lg shadow-lg transform hover:scale-105 transition">
+            <h3 class="text-xl font-bold text-teal-400">Teamwork & Collaboration</h3>
+            <p class="text-gray-400 mt-2">Excel in working collaboratively to achieve common goals.</p>
           </div>
         </div>
       </div>
