@@ -4,78 +4,34 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Me</title>
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  <!-- GSAP for Animations -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
-<body class="bg-gray-900 text-white font-poppins">
-  <!-- Navigation Bar -->
-  <nav class="bg-gray-800 fixed w-full z-50 shadow-lg">
-    <div class="container mx-auto flex justify-between items-center py-4 px-6">
-      <h1 class="text-2xl font-bold text-teal-400">Jumana Portfolio</h1>
-      <ul class="flex space-x-6">
-        <li><a href="index.html" class="text-white hover:text-teal-400">Home</a></li>
-        <li><a href="about.html" class="text-teal-400 font-bold">About Me</a></li>
-        <li><a href="projects.html" class="text-white hover:text-teal-400">Projects</a></li>
-        <li><a href="contact.html" class="text-white hover:text-teal-400">Contact Me</a></li>
+<body>
+
+  <nav>
+    <div class="container">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About Me</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact Me</a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- About Section -->
-  <section class="pt-28 px-6">
-    <div class="container mx-auto">
-      <div class="flex flex-col md:flex-row items-center">
-        <!-- Image Section -->
-        <div class="w-full md:w-1/3 flex justify-center">
-          <div class="rounded-full overflow-hidden border-8 border-teal-400 shadow-lg w-48 h-48 transform hover:scale-110 transition">
-            <img src="images/WhatsApp Image 2025-01-21 at 7.55.28 PM.jpeg" alt="Jumana Hussien" class="w-full h-full object-cover">
-          </div>
-        </div>
-        <!-- Text Section -->
-        <div class="mt-8 md:mt-0 md:ml-12 text-center md:text-left">
-          <h1 class="text-4xl font-bold text-teal-400">About Me</h1>
-          <p class="mt-4 text-lg text-gray-300">
-            Hello! I'm Jumana, a passionate individual with a love for creating meaningful and impactful digital experiences.
-          </p>
-          <p class="mt-4 text-lg text-gray-300">
-            With a strong interest in technology and problem-solving, I thrive on challenges that allow me to learn, grow, and innovate.
-          </p>
-        </div>
-      </div>
-
-      <!-- Skills Section -->
-      <div class="mt-16">
-        <h2 class="text-3xl font-bold text-teal-400 mb-6">Skills</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          <!-- Skill Card -->
-          <div class="bg-gray-800 p-6 rounded-lg shadow-lg transform hover:scale-105 transition">
-            <h3 class="text-xl font-bold text-teal-400">Programming & Development</h3>
-            <p class="text-gray-400 mt-2">Experience with various programming languages and frameworks.</p>
-          </div>
-          <div class="bg-gray-800 p-6 rounded-lg shadow-lg transform hover:scale-105 transition">
-            <h3 class="text-xl font-bold text-teal-400">Problem Solving</h3>
-            <p class="text-gray-400 mt-2">Enjoy tackling complex problems with creative and efficient solutions.</p>
-          </div>
-          <div class="bg-gray-800 p-6 rounded-lg shadow-lg transform hover:scale-105 transition">
-            <h3 class="text-xl font-bold text-teal-400">Teamwork & Collaboration</h3>
-            <p class="text-gray-400 mt-2">Excel in working collaboratively to achieve common goals.</p>
-          </div>
-        </div>
-      </div>
+  <section class="about">
+    <div class="container">
+      <h1>About Me</h1>
+      <p>I'm a passionate software engineer & QA specialist with a strong background in AI and Web Development.</p>
+      <h2>Skills</h2>
+      <ul>
+        <li>Web Development (HTML, CSS, JavaScript, React)</li>
+        <li>QA & Testing (Selenium, Manual Testing, Automation)</li>
+        <li>Machine Learning (TensorFlow, PyTorch)</li>
+      </ul>
     </div>
   </section>
 
-  <script>
-    // GSAP Animations
-    gsap.from("nav", { duration: 1, y: -50, opacity: 0, ease: "power3.out" });
-    gsap.from(".rounded-full", { duration: 1, scale: 0.8, opacity: 0, delay: 0.5, ease: "elastic.out(1, 0.75)" });
-    gsap.from("h1", { duration: 1, y: 50, opacity: 0, delay: 0.8, ease: "power3.out" });
-    gsap.from("p", { duration: 1, y: 30, opacity: 0, delay: 1, stagger: 0.2, ease: "power3.out" });
-    gsap.from(".grid > div", { duration: 1, opacity: 0, y: 50, stagger: 0.2, ease: "power3.out" });
-  </script>
 </body>
 </html>
