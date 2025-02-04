@@ -55,6 +55,18 @@ nav {
   color: black;
 }
 
+/* Projects Section */
+.projects {
+  padding-top: 120px; /* حل مشكلة الهيدر */
+}
+
+.projects h1 {
+  font-size: 2.5rem;
+  color: #2dd4bf;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
 /* Categories */
 .categories {
   margin: 20px auto;
@@ -64,24 +76,18 @@ nav {
 }
 
 .category-btn {
-  padding: 10px 20px;
-  border: none;
-  background: #2dd4bf;
-  color: black;
+  padding: 12px 24px;
   font-size: 1rem;
-  border-radius: 5px;
+  font-weight: bold;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background 0.3s, transform 0.3s;
-}
-
-.category-btn:hover {
-  background: #23b5a3;
-  transform: scale(1.05);
+  transition: all 0.3s ease-in-out;
 }
 
 .category-btn.active {
   background: #1a8981;
   color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* Projects Grid */
