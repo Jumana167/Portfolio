@@ -1,57 +1,52 @@
-// Filter projects by category on the Projects page
-const categoryButtons = document.querySelectorAll('.category-btn');
-const projects = document.querySelectorAll('.project');
+document.addEventListener("DOMContentLoaded", () => {
+  const categoryButtons = document.querySelectorAll(".category-btn");
+  const projects = document.querySelectorAll(".project");
 
-if (categoryButtons.length > 0 && projects.length > 0) {
+  // فلترة المشاريع عند الضغط على الزر المناسب
   categoryButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      // Remove 'active' class from all buttons
-      categoryButtons.forEach(btn => btn.classList.remove('active'));
-      button.classList.add('active');
+    button.addEventListener("click", () => {
+      // إزالة الفئة "active" من جميع الأزرار
+      categoryButtons.forEach(btn => btn.classList.remove("active"));
+      button.classList.add("active");
 
-      // Get the category to filter
-      const category = button.getAttribute('data-category');
+      const category = button.getAttribute("data-category");
 
-      // Show or hide projects based on the selected category
+      // إظهار المشاريع المناسبة فقط
       projects.forEach(project => {
-        if (category === 'all' || project.getAttribute('data-category') === category) {
-          project.style.display = 'block';
+        if (category === "all" || project.getAttribute("data-category") === category) {
+          project.style.display = "block";
+          gsap.fromTo(project, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.5 });
         } else {
-          project.style.display = 'none';
+          project.style.display = "none";
         }
       });
     });
   });
-}
 
-// Scroll animations for projects
-const projectsForAnimation = document.querySelectorAll('.project');
-const observer = new IntersectionObserver(
-  entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
+  // **إضافة تأثيرات GSAP عند تحميل الصفحة**
+  gsap.from("nav", { opacity: 0, y: -50, duration: 1, ease: "power3.out" });
+  gsap.from("h1", { opacity: 0, scale: 0.8, duration: 1, delay: 0.5, ease: "power3.out" });
+  gsap.from(".projects-container", { opacity: 0, y: 50, duration: 1, delay: 0.8, ease: "power3.out" });
+
+  // **إضافة تأثير hover على المشاريع**
+  projects.forEach(project => {
+    project.addEventListener("mouseenter", () => {
+      gsap.to(project, { scale: 1.05, boxShadow: "0px 10px 20px rgba(0, 0, 0, 0.3)", duration: 0.3 });
+    });
+
+    project.addEventListener("mouseleave", () => {
+      gsap.to(project, { scale: 1, boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)", duration: 0.3 });
+    });
+  });
+
+  // **تأثيرات تنقل السلاسة عند الضغط على الروابط في القائمة العلوية**
+  document.querySelectorAll("nav a").forEach(link => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      const target = document.querySelector(link.getAttribute("href"));
+      if (target) {
+        gsap.to(window, { duration: 0.8, scrollTo: target, ease: "power3.inOut" });
       }
     });
-  },
-  { threshold: 0.1 }
-);
-
-projectsForAnimation.forEach(project => {
-  observer.observe(project);
-});
-
-// Smooth scrolling for navigation links
-const navLinks = document.querySelectorAll('.nav-links a');
-navLinks.forEach(link => {
-  link.addEventListener('click', e => {
-    e.preventDefault();
-    const targetId = link.getAttribute('href').replace('.html', '');
-    const targetElement = document.querySelector(`#${targetId}`);
-    if (targetElement) {
-      targetElement.scrollIntoView({ behavior: 'smooth' });
-    } else {
-      window.location.href = link.getAttribute('href');
-    }
   });
 });
